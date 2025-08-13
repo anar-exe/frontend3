@@ -1,12 +1,11 @@
 $(document).ready(function () {
-
-    $(document).on('keypress', function (e) {
+    $(document).on("keypress", function (e) {
         if (e.which = 13) {
-            let url = ``;
+            let url = `https://apithree-theta.vercel.app/api/news`;
 
             async function mynews() {
                 let responce = await fetch(url);
-                let data = await responce.json();
+                let data = await responce.json()
 
                 if (Array.isArray(data.news)) {
                     data.news.forEach(item => {
@@ -36,7 +35,7 @@ $(document).ready(function () {
 
     $("h2").click(async function (e) {
         e.preventDefault();
-        let url = ``;
+        let url = `https://apithree-theta.vercel.app/api/news`;
 
         async function mynews() {
             let responce = await fetch(url);
@@ -46,7 +45,7 @@ $(document).ready(function () {
             if (Array.isArray(data.news)) {
                 data.news.forEach(item => {
                     const box = document.createElement('div');
-                    box.className = 'col-md-4';
+                    box.className = 'col-md-4'
                     box.innerHTML = `
                             <div class="box">
                                 <div class="imgbox">
